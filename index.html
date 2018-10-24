@@ -15,6 +15,13 @@
 	<script type="text/javascript" language="javascript" src="media/js/jquery.dataTables.js"></script>
 	<script type="text/javascript" language="javascript" src="resources/syntax/shCore.js"></script>
 	<script type="text/javascript" language="javascript" src="resources/demo.js"></script>
+
+	<style>
+.redClass {
+    color: red;
+}
+</style>
+
 	<script type="text/javascript" language="javascript" class="init">
 
 $(document).ready(function() {
@@ -31,16 +38,25 @@ $(document).ready(function() {
 			{ "data": "Name" },
 			{ "data": "Cell" },
 			{ "data": "Child" },
-			{ "data": "Receiver" },
-			{ "data": "Gender" },
+			{ "data": "due" },
 		],
 		"columnDefs": [
             {
                 "targets": [ 2 ],
                 "visible": false,
                 "searchable": true
+            },
+            {
+                "targets": [ 4 ],
+                "visible": false,
+                "searchable": true
             }
-        ]
+        ],
+		"createdRow": function( row, data, dataIndex){
+                if( data['due'] ==  'Due'){
+                    $(row).addClass('redClass');
+                }
+            }
 
 	} );
 } );
@@ -49,9 +65,9 @@ $(document).ready(function() {
 </head>
 <body class="dt-example">
 	<div class="container">
+
 		<section>
-			<h1>Mirpur G2G Registration List</span></h1>
-			<h3>Search By Your name or Mobile Number</h3>
+			<h3><img src="/img/logo.png" width="120px" height="100px">Search By Your name or Mobile Number</h3>
 			<div class="demo-html"></div>
 			<table id="example" class="display" style="width:100%">
 				<thead>
@@ -60,8 +76,6 @@ $(document).ready(function() {
 						<th>Name</th>
 						<th>Cell</th>
 						<th>Child</th>
-						<th>Receiver</th>
-						<th>Gender</th>
 					</tr>
 				</thead>
 			</table>

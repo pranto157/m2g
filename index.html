@@ -19,6 +19,12 @@
 
 $(document).ready(function() {
 	$('#example').DataTable( {
+		"bPaginate": false,
+		"bLengthChange": false,
+		"bFilter": true,
+		"bInfo": false,
+		"bAutoWidth": false,
+		"ordering": false,
 		"ajax": "data/m2g.json",
 		"columns": [
 			{ "data": "ID" },

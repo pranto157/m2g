@@ -18,7 +18,7 @@
 
 	<style>
 .redClass {
-    color: red;
+    color: green;
 }
 </style>
 
@@ -53,8 +53,8 @@ $(document).ready(function() {
             }
         ],
 		"createdRow": function( row, data, dataIndex){
-                if( data['due'] ==  'Due'){
-                    <!--$(row).addClass('redClass');-->
+                if( data['Due'] ==  'Due'){
+                    $(row).addClass('redClass');
                 }
             }
 

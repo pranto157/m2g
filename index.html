@@ -38,7 +38,8 @@ $(document).ready(function() {
 			{ "data": "Name" },
 			{ "data": "Cell" },
 			{ "data": "Child" },
-			{ "data": "due" },
+			{ "data": "Gender" },
+			{ "data": "Due" },
 		],
 		"columnDefs": [
             {
@@ -47,10 +48,11 @@ $(document).ready(function() {
                 "searchable": true
             },
             {
-                "targets": [ 4 ],
+                "targets": [ 5 ],
                 "visible": false,
                 "searchable": true
-            }
+            },
+            {"className": "dt-center", "targets": [0,2,3,4]}
         ],
 		"createdRow": function( row, data, dataIndex){
                 if( data['Due'] ==  'Due'){
@@ -76,6 +78,7 @@ $(document).ready(function() {
 						<th>Name</th>
 						<th>Cell</th>
 						<th>Child</th>
+						<th>Gender</th>
 					</tr>
 				</thead>
 			</table>

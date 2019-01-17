@@ -4,7 +4,7 @@
 	<meta charset="utf-8">
 	<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
-	<title>Mirpur G2G Registration List</title>
+	<title>Picnic Registration List</title>
 	<link rel="stylesheet" type="text/css" href="media/css/jquery.dataTables.css">
 	<link rel="stylesheet" type="text/css" href="resources/syntax/shCore.css">
 	<link rel="stylesheet" type="text/css" href="resources/demo.css">
@@ -26,6 +26,7 @@
 
 $(document).ready(function() {
 	$('#example').DataTable( {
+		"dom": 'lrtip',
 		"bPaginate": false,
 		"bLengthChange": false,
 		"bFilter": true,
@@ -80,8 +81,10 @@ $(document).ready(function() {
 						<th>ID</th>
 						<th>Name</th>
 						<th>Cell</th>
-						<th>Child</th>
+						<th>Payment Type</th>
+						<th>Ammount</th>
 						<th>Gender</th>
+						<th>Religion</th>
 					</tr>
 				</thead>
 			</table>

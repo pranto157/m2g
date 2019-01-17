@@ -34,12 +34,14 @@ $(document).ready(function() {
 		"ordering": false,
 		"ajax": "data/m2g.json",
 		"columns": [
-			{ "data": "ID" },
+			{ "data": "Sl." },
 			{ "data": "Name" },
-			{ "data": "Cell" },
-			{ "data": "Child" },
+			{ "data": "Mobile No" },
+			{ "data": "Payment Type" },
+			{ "data": "Ammount" },
 			{ "data": "Gender" },
-			{ "data": "Due" },
+			{ "data": "Religion" },
+			{ "data": "Referrence" },
 		],
 		"columnDefs": [
             {
@@ -47,11 +49,11 @@ $(document).ready(function() {
                 "visible": false,
                 "searchable": true
             },
-            {
-                "targets": [ 5 ],
-                "visible": false,
-                "searchable": true
-            },
+            // {
+            //     "targets": [ 5 ],
+            //     "visible": false,
+            //     "searchable": true
+            // },
             {"className": "dt-center", "targets": [0,2,3,4]}
         ],
 		"createdRow": function( row, data, dataIndex){

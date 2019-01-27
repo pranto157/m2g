@@ -4,15 +4,14 @@
 	<meta charset="utf-8">
 	<link rel="shortcut icon" type="image/ico" href="http://www.datatables.net/favicon.ico">
 	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, user-scalable=no">
-	<title>Picnic Registration List</title>
+	<title>Mirpur G2G Registration List</title>
 	<link rel="stylesheet" type="text/css" href="media/css/jquery.dataTables.css">
 	<link rel="stylesheet" type="text/css" href="resources/syntax/shCore.css">
 	<link rel="stylesheet" type="text/css" href="resources/demo.css">
 	<style type="text/css" class="init">
 
 	</style>
-	
-	<script type="text/javascript" language="javascript" src="media/js/jquery-3.3.1.js"></script>
+	<script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 	<script type="text/javascript" language="javascript" src="media/js/jquery.dataTables.js"></script>
 	<script type="text/javascript" language="javascript" src="resources/syntax/shCore.js"></script>
 	<script type="text/javascript" language="javascript" src="resources/demo.js"></script>
@@ -38,16 +37,9 @@ $(document).ready(function() {
 			{ "data": "ID" },
 			{ "data": "Name" },
 			{ "data": "Cell" },
-			{ "data": "Ammount" },
-			{ "data": "Age" },
-			{ "data": "Area" },
-			{ "data": "Date" },
-			{ "data": "PaymentType" },
-			{ "data": "ReceiveBy" },
+			{ "data": "Child" },
 			{ "data": "Gender" },
-			{ "data": "Religion" },
-			{ "data": "DueStatus" },
-			{ "data": "Referrence" },
+			{ "data": "Due" },
 		],
 		"columnDefs": [
             {
@@ -55,13 +47,19 @@ $(document).ready(function() {
                 "visible": false,
                 "searchable": true
             },
-            // {
-            //     "targets": [ 5 ],
-            //     "visible": false,
-            //     "searchable": true
-            // },
-            // {"className": "dt-center", "targets": [0,2,3,4]}
+            {
+                "targets": [ 5 ],
+                "visible": false,
+                "searchable": true
+            },
+            {"className": "dt-center", "targets": [0,2,3,4]}
         ],
+		"createdRow": function( row, data, dataIndex){
+                if( data['Due'] ==  'Due'){
+                    $(row).addClass('redClass');
+                }
+            }
+
 	} );
 } );
 
@@ -71,8 +69,7 @@ $(document).ready(function() {
 	<div class="container">
 
 		<section>
-			<h1>Picnic Registration</h1>
-			<h3>Search By Your name or Mobile Number</h3>
+			<h3><img src="/img/Logo.png" width="120px" height="100px">Search By Your name or Mobile Number</h3>
 			<div class="demo-html"></div>
 			<table id="example" class="display" style="width:100%">
 				<thead>
@@ -80,16 +77,8 @@ $(document).ready(function() {
 						<th>ID</th>
 						<th>Name</th>
 						<th>Cell</th>
-						<th>Ammount</th>
-						<th>Age</th>
-						<th>Area</th>
-						<th>Date</th>
-						<th>PaymentType</th>
-						<th>ReceiveBy</th>
+						<th>Child</th>
 						<th>Gender</th>
-						<th>Religion</th>
-						<th>DueStatus</th>
-						<th>Referrence</th>
 					</tr>
 				</thead>
 			</table>

@@ -36,19 +36,21 @@ $(document).ready(function() {
 		"columns": [
 			{ "data": "ID" },
 			{ "data": "Name" },
+			{ "data": "Mobile No" },
+			{ "data": "Ammount" },
 			{ "data": "Age" },
 			{ "data": "Area" },
 			{ "data": "Date" },
-			{ "data": "Mobile No" },
 			{ "data": "Payment Type" },
-			{ "data": "Ammount" },
+			{ "data": "Receive by" },
 			{ "data": "Gender" },
 			{ "data": "Religion" },
+			{ "data": "Due Status" },
 			{ "data": "Referrence" },
 		],
 		"columnDefs": [
             {
-                "targets": [ 5 ],
+                "targets": [ 2 ],
                 "visible": false,
                 "searchable": true
             },
@@ -59,12 +61,6 @@ $(document).ready(function() {
             // },
             {"className": "dt-center", "targets": [0,2,3,4]}
         ],
-		"createdRow": function( row, data, dataIndex){
-                if( data['Due'] ==  'Due'){
-                    $(row).addClass('redClass');
-                }
-            }
-
 	} );
 } );
 
@@ -82,14 +78,16 @@ $(document).ready(function() {
 					<tr>
 						<th>ID</th>
 						<th>Name</th>
+						<th>Ammount</th>
 						<th>Age</th>
 						<th>Area</th>
 						<th>Date</th>
-						<th>Cell</th>
 						<th>Payment Type</th>
-						<th>Ammount</th>
+						<th>Receive by</th>
 						<th>Gender</th>
 						<th>Religion</th>
+						<th>Due Status</th>
+						<th>Referrence</th>
 					</tr>
 				</thead>
 			</table>
